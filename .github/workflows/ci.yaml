@@ -106,12 +106,13 @@ jobs:
       - name: Checkov
         uses: bridgecrewio/checkov-action@v12
         with:
-          directory: 'Infrastructure\revision\terraform\'
+          directory: 'Infrastructure\revision\terraform'
           soft_fail: true
 
       - name: terraform plan
         if: false 
         run: terraform plan -out=tfplan
+        working-directory: 'Infrastructure\revision\terraform\parent module\Environment\preprod'
 
       - name: Atifact upload
         uses: actions/upload-artifact@v4

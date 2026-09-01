@@ -61,14 +61,6 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: Check exact directory names
-        run: |
-          echo "=== Current Root Directory ==="
-          pwd
-          echo "=== Finding all preprod directories ==="
-          find . -type d -name "preprod"
-       
-
       - name: Terraform installation
         uses: hashicorp/setup-terraform@v3
         with:

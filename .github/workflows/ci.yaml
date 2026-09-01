@@ -54,21 +54,12 @@ jobs:
 
       defaults:
         run:
-          working-directory: 'Infrastructure\revision\terraform\parent module\Environment\preprod'
-          
+          working-directory: 'Infrastructure/revision/terraform/parent module \ Environment/preprod'
 
       steps:
         
       - name: checkout code
         uses: actions/checkout@v4
-
-      - name: Check exact directory names
-        run: |
-          echo "=== Current Root Directory ==="
-          pwd
-          echo "=== Finding all preprod directories ==="
-          find . -type d -name "preprod"
-       
 
       - name: Terraform installation
         uses: hashicorp/setup-terraform@v3
@@ -119,7 +110,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
             name: terraform-plan
-            path: 'Infrastructure\revision\terraform\parent module\Environment\'
+            path: 'Infrastructure/revision/terraform/parent module \ Environment/preprod/tfplan'
 
 
 

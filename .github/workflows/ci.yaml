@@ -54,7 +54,7 @@ jobs:
 
       defaults:
         run:
-          working-directory: 'terraform/parent module/Environment/preprod'
+          working-directory: './terraform/parent module/Environment/preprod'
 
       steps:
         
@@ -77,7 +77,7 @@ jobs:
 
       - name: terraform init
         run: terraform init
-        working-directory: 'terraform/parent module/Environment/preprod'
+        working-directory: './terraform/parent module/Environment/preprod'
         
 
       - name: terraform validate
@@ -104,13 +104,13 @@ jobs:
       - name: terraform plan
         if: false 
         run: terraform plan -out=tfplan
-        working-directory: 'terraform/parent module/Environment/preprod'
+        working-directory: './terraform/parent module/Environment/preprod'
 
       - name: Atifact upload
         uses: actions/upload-artifact@v4
         with:
             name: terraform-plan
-            path: 'terraform/parent module/Environment/preprod/tfplan'
+            path: './terraform/parent module/Environment/preprod/tfplan'
 
 
 

@@ -1,0 +1,2 @@
+variable "container" {}
+variable "store" {}

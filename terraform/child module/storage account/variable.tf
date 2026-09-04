@@ -1,0 +1,2 @@
+variable "store" {}
+variable "resource" {}

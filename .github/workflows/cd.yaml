@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 env:
-  TF_WORKING_DIR: './Terraform/environment/dev'
+  TF_WORKING_DIR: './terraform/parent module/Environments/prod'
   AKS_CLUSTER_NAME: 'aks-dev-cluster'
   RESOURCE_GROUP: 'rg_rg_rg1'
 
@@ -50,7 +50,7 @@ jobs:
   argocd-gitops:
     name: ArgoCD GitOps Deployment
     runs-on: ubuntu-latest
-    needs: terraform-deploy
+    needs: deploy
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4

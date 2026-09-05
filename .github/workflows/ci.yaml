@@ -18,11 +18,13 @@ jobs:
         - name: checkout code 
           uses: actions/checkout@v4
         
+
         - name: java installation
           uses: actions/setup-java@v4
           with:
            distribution: 'temurin'
            java-version: '17'
+
 
         - name: sonar qube scan
           if: false

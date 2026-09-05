@@ -68,7 +68,6 @@ jobs:
 
 
       - name: Azure Login
-        if: false
         uses: azure/login@v2
         with:
            client-id: ${{ secrets.AZURE_CLIENT_ID }}
